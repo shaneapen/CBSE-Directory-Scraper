@@ -1,0 +1,1582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+
+</title>
+<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="../js/superfish.js" type="text/javascript"></script>
+    <script src="../js/hoverIntent.js" type="text/javascript"></script>
+    <link href="../css/superfish.css" rel="stylesheet" type="text/css" /><link rel="stylesheet" type="text/css" href="../css/mainstylesheet_master.css" /><link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+   
+    <script type="text/javascript">
+        function SendDataLoginSchool(salt) {      
+
+
+            var pwd1 = document.getElementById('Password').value
+            if (pwd1.length &gt; 15) {
+                alert("Password length can't be greater then 15");
+                return (false);
+            }
+
+            if (document.getElementById('Password').value == "") {
+                alert("Enter Your Password");
+                document.getElementById('Password').focus();
+                return (false);
+            }
+
+            var a = new RegExp("^(?=.{8,13})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            if (!a.test(document.getElementById('Password').value)) {
+                alert('Your password must satisfy the following. \n\n* Password should be 8 to 13 character long. \n* Password should have at least one Upper case alphabet.\n* Password should have at least one Lower case alphabet. \n* Password should have at least one numeric value. \n* Password should have at least one special characters eg.!@#$%^&amp;*-');
+                return (false);
+            }
+
+            if (document.getElementById('Password').value != "") {
+                document.getElementById('Password').value = (hex_md5(document.getElementById('Password').value.toUpperCase())).toUpperCase();
+                // document.getElementById('newpass').value = (hex_md5(document.getElementById('newpass').value + salt)).toUpperCase();
+                //document.getElementById('newpass').value = (hex_md5(document.getElementById('newpass').value)).toUpperCase();
+            }
+
+
+            var pwd1 = document.getElementById('PasswordConfirm').value
+            if (pwd1.length &gt; 15) {
+                alert("Password length can't be greater then 15");
+                return (false);
+            }
+
+            if (document.getElementById('PasswordConfirm').value == "") {
+                alert("Enter Your Password");
+                document.getElementById('PasswordConfirm').focus();
+                return (false);
+            }
+
+            var a = new RegExp("^(?=.{8,13})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            if (!a.test(document.getElementById('PasswordConfirm').value)) {
+                alert('Your password must satisfy the following. \n\n* Password should be 8 to 13 character long. \n* Password should have at least one Upper case alphabet.\n* Password should have at least one Lower case alphabet. \n* Password should have at least one numeric value. \n* Password should have at least one special characters eg.!@#$%^&amp;*-');
+                return (false);
+            }
+
+
+            if (document.getElementById('PasswordConfirm').value != "") {
+                document.getElementById('PasswordConfirm').value = (hex_md5(document.getElementById('PasswordConfirm').value.toUpperCase())).toUpperCase();
+                //document.getElementById('PasswordConfirm').value = (hex_md5(document.getElementById('PasswordConfirm').value + salt)).toUpperCase();
+                //document.getElementById('conpass').value = (hex_md5(document.getElementById('conpass').value)).toUpperCase();
+            }
+
+            else {
+                alert("Please enter password.");
+                return (false);
+            }
+            return (true);
+        }
+    </script>
+    <script src="../js/news-scroller.js" type="text/javascript"></script>
+     <script type="text/javascript">        // initialise plugins
+        jQuery(function () {
+            jQuery('#example').superfish();
+            jQuery('#example1').superfish();
+        }); 
+    </script>
+    <script type="text/javascript">        // initialise plugins
+        jQuery(function () {
+            jQuery('#example').superfish();
+        }); 
+    </script>
+    <style>
+    .mrque
+    {
+        font-style:oblique ;
+        font-size:10;
+        color:#000;
+        onmouseover:"this.stop()";
+        onmouseout="this.start()"
+    }
+   
+    </style>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="userview.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="kybXvCEOsUgL3OZVPSAAQPsa7s/BleMjOz9SU6Cn9xrqdrE/GYPQUjTFZwydaO14Xto4n0L7QCOIyJp48HiNGArGNgqsv9m0wd6iTjhIxzXfUaThhAWzfimPAuUQkF4LzRKhl/wbEzEmeN1slXBPc4lC/CMGLiBulH2CeLMlkLrYD5oFD7oZh9BvPYOyFaD699+XUe6kI93T9ad5XrrpzS8dQmcQE814Mjanlvbb6Ne2zMpCpHmksZxxgLTHO12RPht1pCiU7SIlZQXJyHo8Mzj8187BDMNJKuYbf/VeJJes6wX3n1R8BTqXS1MV/FXRUQq48wgGOMTIq5ukeRVnZueQkR5q6OEFHcfSwRIfqJoWifR3IFTdOcNh8M0TSQQ0qKYA5ioIrlepWQeRRpo+ACgKqHDR8B+M+PumxZHTwZo/8b/Vaf2b0ayrrxgJhlr2OYCL2qA2jeDcw6mF5Oecje33DdRX/PRQ5AIqQ/u2QJmyRKRcmd+mNyHaLxc1apgdEuZ9XhT3FLhXR6eLqJn+3Ct3N5qWOVLvZONO37nBk2HBYcreIOVaOdEu6N1P7gUyhd8sVPOl2jNfNM9+23mMmwqnF/Bm21dTU7R2VkD9pbGwJlB0J9IXFEEAtndRmQUCWNQNXwKSc0UlHE6AqO3EiLcPsEi2j9gUGIR7io3orZeG+ng0ktbo9yVnrRqKE5vkQTAOxFLnJMgsBO/2VItwCsuFWkhHwp4FIMG1IOHqJDw98Tzw5eQskrvi9dcZjspTOUbMT6fz5aSPMUu3glfOgKas32uui6zDyxuFVeQ6NR6PR5wYMWVlv+sxhRIorq0OlxJhFhQLREYJ1S07Zf7rO0uLedj5XcjAT5HXxz2ZmMRLR1eExH/hPc1JL9SNh3y1VaoVrqhuU+UTvit9848dhzV9h9PzDIBQt7BmnsYzhqYqOUzLzPdxd0BSQm/E2XN3+XphmZFpGyBQlEUvquZz9l3HsNAD+lVKHM4LXgABaKwKGF4aErZx9uZDX3SXo2X6ZDfLWcAwcdMKKBIqADJ0CXxwbIzSRmDuyvqxjjZXG3uf35GglW5AfTBfgvGd3wuLWtIT1PFQ0z/26DdO8+tALGSDaFpLzzaTW3/4at6e2D26MaVyZh2PNyUGDnwSk9DosJzcPk/IYA89bTbb2UDfphbaq5NJKVHJbN5j9eU9f1YMRTTP3XdjW3PyyvjKLnaa7OCqUIKGyouzyq2gY/uOVCD9f1/C+MVpoGye4zLGyEXOd5ZXFpG9c0q9kvLOyBAFeQCF2yhLPTC1vBRdETyEazBmpntVnoKKfhSu81odgUaQ8OC7hdB8eWIRGW7CEXdY0TQHb8yE3h2bggPIXX4FOKyO2Co+B1ZrvcD+DEI/WXJ8pK3CQxv1znbQxukWCWrM5tfFnbeAbO0BCjKDE9NJU9Uel5fvuwMLqP+QSHOa+JoxwyoSOVdCcNrBG9gBrMrKI3gX6PsimtFB6eE3wvbEmC6mvQ78KEnQLcaT+d40cyCeHMWouHEsLFkh/RYBetYSNw4hCtjjynN/GjjLxdB9NxWnOv9xF7Mve7js/8haVxKI1P4qMxAWnpcx4kFG0rusKVI8eF08MsSKLUNQF6xB3btPByoVe1BK7vPDOUeTB6DDgxPI1j/mkwHvcYg/sLm9BVqSL+U1zvo+vKQfczOrgcx5RBTD+gyy2EALLOkGw2IU66zmY2KYtEFmcxrkIuGDHtVL0dNxTE+7HopYB326jQ3hEMC6qF9kv00J7it69kS3/feQaneWoKNYJa2wXhYCuAP3ex/4zL7yBfkUvMmfrHvYFc+PU+7KzwGtdxUm7jqLEAthxkPdKvG3nnjrmMITa39dEyjV+GNX68dh2r5ReCklgPwHm2qHFaVfea0fQ8JjVTIpTJhSrTpSKzvHRr9eNXCfOWyNJ9knGp9tbt2JtbE9qEzFDnwPAC+t9jRb5Yc5SfhEo2BmyRil0vcwJlLFtAd8BCT+rVZO0NACeNzeDq2piA3eslaHSxoIq5heRjH9VyEKntIVCpO6H+Wc3qg1exyXsX423OppCT/RZqCh15tPF59ER+KwipEJKHfF/9IplIQLtHfztO3HxDxeqNm3" />
+</div>
+
+<script type="text/javascript">
+//&lt;![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]&gt;
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="AC872EDD" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+        <div class="banner">
+            <div class="container">
+                <div class="logo3"><img src="image/cbse-logo1.png" alt="" /></div>
+                <div class="banner_text">                    
+                    <h2>केन्द्रीय माध्यमिक शिक्षा बोर्ड</h2>
+                    <h2>Central Board of Secondary Education</h2>
+                    <h1>संबंधता - Online School Affiliation &amp; Monitoring System R-2.0</h1>
+                    <h5 style="color: #FF5722;font-size: 15px;font-weight: 400;">As per new Affiliation Bye-Laws</h5>
+                </div>
+                <div class="logo2">
+                    <img src="image/digitalindia.png" alt="" />
+                </div>
+            </div>
+                <div class="clear">
+                </div>
+            </div>
+        <div class="menu">
+            <div class="container">
+                <ul class="sf-menu sf-js-enabled" id="example">
+                <li><a class="home_icon" href="../Welcome.aspx">Home</a></li>
+                <li><a href="#" class="sf-with-ul">Affiliation-Bye-Laws<span class="sf-sub-indicator"> »</span><span class="sf-sub-indicator"> »</span></a>
+                   <ul class="custom_sub" style="display: none; visibility: hidden;">
+                       <li><a target="_blank" href="http://cbseaff.nic.in/cbse_aff/attachment/onlineservices/affiliation-Bye-Laws.pdf">Download Affiliation-Bye-Laws</a> </li>
+                        <li><a target="_blank" href="http://cbseaff.nic.in/cbse_aff/Attachment/OnlineServices/replica_form.pdf">Download Replica Of Form</a> </li>                    
+                    </ul>
+                </li>
+                
+                <li><a target="_blank" href="../frmCircular.aspx">Circulars </a></li>
+                <li><a href="#" class="sf-with-ul">Useful Links<span class="sf-sub-indicator"> »</span><span class="sf-sub-indicator"> »</span></a>
+                    <ul class="custom_sub" style="display: none; visibility: hidden;">
+                        <li><a target="_blank" href="http://cbse.nic.in/">Central Board of Secondary Education</a>
+                        </li>
+                        <li><a target="_blank" href="http://cbseresults.nic.in/">CBSE Examination Results Portal</a>
+                        </li>
+                        <li><a target="_blank" href="http://india.gov.in/">National Portal of India</a>
+                        </li>
+                        <li><a target="_blank" href="http://www.education.nic.in/">Ministry of Human Resource
+                            Development</a> </li>
+
+
+                        <li><a target="_blank" href="http://www.cbseacademic.in/">Academics</a>
+                        </li>
+                        <li><a target="_blank" href="http://jeemain.nic.in/">Joint Entrance Exam  [ JEE (Main)]</a>
+                        </li>
+                        <li><a target="_blank" href="http://cbseneet.nic.in/">National Eligibility Cum Entrance Test (NEET)</a>
+                        </li>
+                        <li><a target="_blank" href="http://ctet.nic.in/"> Central Teacher Eligibility Test (CTET) </a> </li>                     
+
+                    </ul>
+                </li>
+                <li><a href="#" class="sf-with-ul">I.C. Login<span class="sf-sub-indicator"> »</span><span class="sf-sub-indicator"> »</span></a>
+                    <ul class="custom_sub" style="display: none; visibility: hidden;">
+                    <li><a target="_blank" href="http://cbseaff.nic.in/cbse_admin_aff/deskwelcome.aspx">
+                            Inspection Committee Login</a></li>
+                    </ul>
+                </li>
+                <li><a target="_blank" href="../School/feedBackInfo.aspx">Feedback </a></li>
+                    <li><a target="_blank" href="http://cbseaff.nic.in/cbse_aff/Attachment/OnlineServices/FAQ.pdf">FAQ</a></li>
+                <li><a target="_blank" href="../help.aspx">Contact Us</a> </li>
+               
+            </ul>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    <div class="main_page">
+        <div class="mrque">
+        <marquee direction="Left" onmouseover="this.stop()" onmouseout="this.start()"><strong> 
+        
+        </strong></marquee>
+        </div>
+
+        
+<div class="main_page" style="width: 109%;margin-left: -4%;margin-bottom:-1%; margin-top: -2px;">
+<div ms_positioning="GridLayout">
+		<div>
+			<table id="t1 " height="30" cellspacing="0" cellpadding="0" width="953" align="center" border="0" clientidmode="Static">
+
+				<tbody><tr>
+					<td>
+						<table id="Table1" cellspacing="0" cellpadding="0" width="99%" align="center" border="0" clientidmode="Static">
+							<tbody><tr>
+								<td valign="top" align="left" width="99%">
+									<div align="center" class="boldlabel" style="color: black; font-size: 15px; margin-top: 10px;">Total No. of Schools affiliated with CBSE :
+										<span id="lbltotschool" style="color:#004000;">21524</span>
+									</div>
+									<br />
+									<div align="center">
+										<table cellspacing="0" cellpadding="0" width="99%" align="center">
+											<tbody><tr>
+												<td width="100%">
+													<fieldset><legend class="boldlabel" align="center" style="color:white; background-color:#00ced1;">CBSE School Directory</legend><br />
+														<table cellspacing="2" cellpadding="2" width="99%" border="0">
+															<tbody><tr class="label">
+																<td colspan="3" align="center"><table id="optlist" title="Select An Option Button" class="label" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+	<tbody><tr>
+		<td><span class="coltext"><input id="optlist_0" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="Search By KeyWord" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$optlist$optlist_0\',\'\')', 0)" /><label for="optlist_0">Keyword wise</label></span></td><td><span class="coltext"><input id="optlist_1" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="AffNo Number Wise" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$optlist$optlist_1\',\'\')', 0)" /><label for="optlist_1">Affi. No. wise</label></span></td><td><span class="coltext"><input id="optlist_2" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="State Wise" checked="checked" /><label for="optlist_2">State wise</label></span></td><td><span class="coltext"><input id="optlist_3" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="Region Wise" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$optlist$optlist_3\',\'\')', 0)" /><label for="optlist_3">Region wise</label></span></td><td><span class="coltext"><input id="optlist_4" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="School Level Wise" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$optlist$optlist_4\',\'\')', 0)" /><label for="optlist_4">School level wise</label></span></td><td><input id="optlist_5" type="radio" name="ctl00$ContentPlaceHolder1$optlist" value="DisAffiliated Schools" onclick="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$optlist$optlist_5\',\'\')', 0)" /><label for="optlist_5">Disaffiliated schools</label></td>
+	</tr>
+</tbody></table></td>
+															</tr>
+															<tr class="label">
+																<td align="right" width="35%"><span id="lblschinfo">Select A State:</span></td>
+																<td align="left" colspan="2"><select name="ctl00$ContentPlaceHolder1$ddlitem" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlitem\',\'\')', 0)" id="ddlitem" class="textboxes1" style="width:222px;">
+	<option value="---Select A State---">---Select A State---</option>
+	<option value="25">ANDAMAN &amp; NICOBAR </option>
+	<option value="1 ">ANDHRA PRADESH </option>
+	<option value="22">ARUNACHAL PRADESH </option>
+	<option value="2 ">ASSAM </option>
+	<option value="3 ">BIHAR </option>
+	<option value="26">CHANDIGARH </option>
+	<option value="33">CHATTISGARH </option>
+	<option value="30">DADAR &amp; NAGAR HAVELI </option>
+	<option value="31">DAMAN &amp; DIU </option>
+	<option value="27">DELHI </option>
+	<option value="50">FOREIGN SCHOOLS</option>
+	<option value="28">GOA </option>
+	<option value="4 ">GUJARAT </option>
+	<option value="5 ">HARYANA </option>
+	<option value="6 ">HIMACHAL PRADESH </option>
+	<option value="7 ">JAMMU &amp; KASHMIR </option>
+	<option value="34">JHARKHAND</option>
+	<option value="8 ">KARNATAKA </option>
+	<option selected="selected" value="9 ">KERALA </option>
+	<option value="32">LAKSHADWEEP </option>
+	<option value="10">MADHYA PRADESH </option>
+	<option value="11">MAHARASHTRA </option>
+	<option value="12">MANIPUR </option>
+	<option value="13">MEGHALAYA </option>
+	<option value="23">MIZORAM </option>
+	<option value="14">NAGALAND </option>
+	<option value="15">ODISHA</option>
+	<option value="29">PUDUCHERRY</option>
+	<option value="16">PUNJAB </option>
+	<option value="17">RAJASTHAN </option>
+	<option value="18">SIKKIM </option>
+	<option value="19">TAMILNADU </option>
+	<option value="36">TELANGANA</option>
+	<option value="20">TRIPURA </option>
+	<option value="21">UTTAR PRADESH</option>
+	<option value="35">UTTARAKHAND</option>
+	<option value="24">WEST BENGAL </option>
+
+</select></td>
+															</tr>
+                                                            <tr class="label">
+																<td align="right" width="35%"><span id="lbldist">Select A District:</span></td>
+																<td align="left" colspan="2"><select name="ctl00$ContentPlaceHolder1$DropDownDistrict" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$DropDownDistrict\',\'\')', 0)" id="DropDownDistrict" class="textboxes1" style="width:222px;">
+	<option value="---Select District---">---Select District---</option>
+	<option value="01">ALAPPUZHA </option>
+	<option selected="selected" value="03">ERNAKULAM </option>
+	<option value="04">IDDUKI </option>
+	<option value="05">IDUKKI </option>
+	<option value="02">KANNUR </option>
+	<option value="06">kasaragod</option>
+	<option value="11">KOLLAM </option>
+	<option value="07">KOTTAYAM </option>
+	<option value="08">KOZHIKODE </option>
+	<option value="09">MALAPPURAM </option>
+	<option value="10">PALAKKAD </option>
+	<option value="15">PATHANAMTHITTA </option>
+	<option value="12">THIRUVANANTHAPURAM </option>
+	<option value="13">THRISSUR </option>
+	<option value="14">WAYANAD </option>
+
+</select></td>
+															</tr>
+                                                            <tr class="label">
+																<td colspan="3" align="center"></td>
+															</tr>
+
+                                                              <tr class="label">
+																<td colspan="3" align="center"></td>
+															</tr>
+															<tr class="label">
+																<td align="right" width="38%"></td>
+																<td align="left" width="47%" colspan="2">
+																	<input type="submit" name="ctl00$ContentPlaceHolder1$search" value="Search" id="search" title="Click, To View Search Results" class="buttons" style="width:100px;" /></td>
+															</tr>
+															<tr class="label">
+																<td align="center" colspan="3"></td>
+															</tr>
+															<tr class="label">
+																<td align="center" colspan="3"></td>
+															</tr>
+														</tbody></table>
+														<br />
+													</fieldset>
+												</td>
+											</tr>
+										</tbody></table>
+									</div>
+									<div align="center" class="boldlabel"> 
+									</div>
+									<div align="center" class="boldlabel"><span id="lbltotal">Total School Affiliated From CBSE For ERNAKULAM :</span> <span id="lbltotal1">196</span>
+									</div>
+									<div align="center">
+										<table cellspacing="0" cellpadding="0" width="99%">
+											<tbody><tr class="boldlabel">
+												<td align="left" width="43%"><span id="lbltype">District Name:</span> <span id="Lbltype1">KERALA </span></td>
+												<td align="right" width="42%"><span id="lblrecord">Total School Found:</span> <span id="tot">196</span></td>
+											</tr>
+										</tbody></table>
+									</div>
+									<div id="p1">
+	
+										<table id="T1" cellspacing="2" cellpadding="2" width="99%" align="center" border="0" clientidmode="Static">
+											<tbody><tr valign="top">
+												<td align="center" width="100%">
+													
+															<table align="center" border="0" cellpadding="2" cellspacing="2" width="100%">
+																<tbody><tr valign="top" bgcolor="steelblue">
+																	<td align="center" width="10%" class="repheader">SNo</td>
+																	<td align="center" width="45%" class="repheader">AffNo,School &amp; Head Name
+																	</td>
+																	<td align="center" width="45%" class="repheader">Address,Phone &amp; Email</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">1</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930404 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930404 ">ADAM PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>SEENA J KALARIKKAL</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					ANGAMALY ALWAYE ERNAKULAM KERALA
+																					,683572</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2454522</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					seenajkalarikkal@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">2</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930117 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930117 ">ADARSHA VIDYA BHAVAN</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>PREETHI C R</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					NORTH PARAVUR ERNAKULAM DISTT, KERALA
+																					,683513</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2445033</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					preethicr242@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">3</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930498 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930498 ">AL AMEEN INTERNATIONAL PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>SUMINA H</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					EDATHALA ALUVA ERNAKULAM DISTT KERALA
+																					,683564</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2837948</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					sumi.subin8@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">4</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930663 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930663 ">AL AMEEN PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>KAVITHA ALEXANDAR</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2022 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					SREEMOOLANAGARAM ERANAKULAM DISTT KERALA
+																					,683580</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2600033</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					kavithasantony@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">5</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>931162 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=931162 ">AL HIND PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>RESEENA KADENGAL</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2022 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					PENGATTUSSERY, ERUMATHALA P.O,ALUVA,ERNAKULAM Dist.-683 112
+																					,683112</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2836111</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					reseena24@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">6</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930960 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930960 ">AL-AMAL PUBLIC SCHOOL, NELLIKKUZHI</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>MUHAMMED ALI K M</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					AL - AMAL PUBLIC SCHOOL
+NELLIKKUZHI. P. O
+KOTHAMANGALAM ERNAKULAM DIST
+KERALA
+																					,686691</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0485
+																					,2828529</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					kmmuhammedali@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">7</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930029 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930029 ">AL-AMEEN PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>L LAKSHMI HARIDAS</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					EDAPPALLY COCHIN, DISTT ERNAKULAM KERALA
+																					,682024</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2801034</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					lakshmileela60@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">8</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>931236 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=931236 ">AL-FALAH PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>SHIBI K M</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					PANIPRA PO, KOTHAMANGALAM, KRNAKULAM KERALA
+																					,686692</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2252095</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					shibikm008@yahoo.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">9</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930441 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930441 ">ALANGAD JAMA-ATH PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>C P JAYASREE</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					KARUMALLOOR PO ERNAKULAM KERALA
+																					,683511</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2670591</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					pblcschl@yahoo.co.in
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">10</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930926 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930926 ">Alhuda Public School</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>DEEPA V</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2022 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					11/266, Panayikulam,
+Alangad (via), Ernakulam.
+Kerala State
+																					,683511</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2671588</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					vdeepa44@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">11</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>931156 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=931156 ">AMAL PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>DHANYA K N</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2022 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					AZHAR NAGAR, CHALAKKAL, MARAMPALLY P.O, ALUVA, ERNAKULAM Dist.
+																					,683107</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,6547726</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					dhanushiju@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">12</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930308 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930308 ">AMRITA VIDYALAYAM</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>Bhakthipriyamrita Chaitanya</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2021 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					KUNNUMPURAM EDAPALLY NORTH DISTT ERNAKULAM, KERALA
+																					,682024</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2801767</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					avbhakthi@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">13</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930122 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930122 ">AMRITA VIDYALAYAM</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>GEETHADEVIPR</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					PERANBAVOOR ERNAKULAM DIST. KERALA
+																					,683542</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2522027</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					avpbvr@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">14</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930767 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930767 ">ARAFA PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>FEBINA JAMAL</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					PEZHAKKAPILLY P.O. MUVATTUPUZHA, ERNAKULAM DISTT., KERALA
+																					,686674</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0485
+																					,2813705</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					febinakanely@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">15</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930893 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930893 ">ARCHBISHOP ATTIPETTY PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>DHANESH ANTONY</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					T.K.C Road, Vaduthala P.O. Kochi, Kanayannoor, Ernakulam,
+																					,682023</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,6588137</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					dhanesh_antony@yahoo.in
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">16</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930138 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930138 ">ASSISI VIDYA NIKETAN PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>HELEN JOYCE JOB</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					ATTIPETTY NAGAR CHEMBUMUKKU KAKKANAD COCHIN KERALA
+																					,682021</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2424724</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					helenjjob@yahoo.co.in
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">17</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930525 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930525 ">ASSISI VIDYANIKETAN PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>ALPHONSA P J</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2021 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					PERUMPILY NARAKKAL KOCHI ERNAKULAM KERALA
+																					,682505</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2498877</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					alphonsasebastian2@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">18</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930781 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930781 ">BAPPUJI ENGLISH MEDIUM SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>BREEZY GEORGE ARACKEL</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					KOOTHATTUKULAM, ERNAKULAM DIST. KERALA
+																					,686662</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0485
+																					,2252103</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					breezygeorgearackel@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">19</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930637 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930637 ">baselios augen public school</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>MINI NAIR</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Secondary School</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					kodanad perumbavo ernakulam distt kerala
+																					,683544</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2646135</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					vgopal.mini@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">20</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930739 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930739 ">BASELIOS VIDYANIKETHAN</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>SOOSY CHERIAN</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					GIRISINAL VETTICKAL PO MULANTHURUTHY ERNAKULAM DISTT KERALA
+																					,682314</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2742250</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					soosy.cherian@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">21</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930352 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930352 ">BETHSADA PUBLIC SCHOOL</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>REEJA PAUL V</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					VENGOLA PERUMBAVOOR, ERNAKULAM DISTT, KERALA
+																					,683554</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2528666</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					reejabijup@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">22</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930016 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930016 ">BHAVAN'S VIDYA MANDIR</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>GIRIJA TS</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					ELAMAKKARA COCHIN, DISTT ERNAKULAM, KERALA
+																					,682026</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2408514</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					girijats123@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">23</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930061 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930061 ">BHAVANS ADARSH VIDYALAYA</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>K SURESH</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2020 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					KAKKANAD KOCHI ERNAKULAM DIST. KERALA
+																					,682030</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2422528</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					kuttath.suresh@yahoo.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr>
+																	<td align="left" width="10%" class="repItem" valign="top">24</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930851 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="Hyperlink1" href="AppViewdir.aspx?affno=930851 ">Bhavans Munshi Vidyashram</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>SUJATHA R NAMBIAR</td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2021 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					Bhavans munshi Vidyashram Old Guest House Road Thiruvamkulam Thirupunathura Cochin
+																					,682305</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2774247</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					sujatanambiar@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														
+															<table align="center" width="100%" border="0" cellpadding="1" cellspacing="1">
+																<tbody><tr bgcolor="whitesmoke">
+																	<td align="left" width="10%" class="repItem" valign="top">25</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top" class="repItem">
+																				<td align="left" class="repItem"><b>Affiliation No.</b>930140 </td>
+																			</tr>
+																			<tr valign="top" class="repItem">
+																				<td align="left"><b>Name:</b>
+																					<a id="hyp" href="AppViewdir.aspx?affno=930140 ">BHAVANS VARUNA VIDYALAYA</a></td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Head/Principal Name:</b>USHA K </td>
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdstatus" align="left" class="repItem"><b>Status of the School:</b>Senior Secondary</td>
+	
+																			</tr>
+                                                                            <tr valign="top">
+																				<td id="tdAffUpto" align="left" class="repItem"><b>Affiliated up to:</b> 31/03/2019 </td>
+	
+																			</tr>
+																		</tbody></table>
+																	</td>
+																	<td align="center" width="45%">
+																		<table align="left">
+																			<tbody><tr valign="top">
+																				<td align="left" class="repItem"><b>Address:</b>
+																					NPOL  TRIKKAKARA B.M.C POST COCHIN, DISTT ERNAKULAM KERALA
+																					,682021</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem"><b>Phone No:</b>
+																					0484
+																					,2422566</td>
+																			</tr>
+																			<tr valign="top">
+																				<td align="left" class="repItem">
+																					<b>Email:</b>
+																					ushakanavillil@gmail.com
+																				</td>
+																			</tr>
+																		</tbody></table>
+																	</td>
+																</tr>
+															</tbody></table>
+														</td>
+											</tr>
+										</tbody></table>
+									
+</div>
+									<div align="center"><input type="submit" name="ctl00$ContentPlaceHolder1$Button2" value="Prev &lt;&lt;" id="Button2" disabled="disabled" class="buttons" s="" />
+                                     
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$Button1" value="Next &gt;&gt;" id="Button1" class="buttons" /></div>
+								</td>
+							</tr>
+						</tbody></table>
+
+				</td></tr></tbody></table>
+		</div>
+        </div>
+        </div>
+
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+         This site is Designed and Developed by IT &amp; Project Department CBSE.</div>
+         
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //for table row
+            $(".newsEvent li p:odd").addClass("alternate");
+
+        });
+    
+    </script>
+    
+
+
+</body></html>
