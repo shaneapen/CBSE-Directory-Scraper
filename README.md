@@ -3,7 +3,7 @@ A Python script to scrape contact details of schools from CBSE directory using S
 
 The script will scrape details from http://cbseaff.nic.in/cbse_aff/schdir_Report/userview.aspx into a sheet.
 
-#How to Run?
+### How to Run?
 1) Install selenium
 2) Install Chrome Webdriver
 3) Run scrape_cbse.py
