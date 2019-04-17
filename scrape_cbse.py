@@ -8,44 +8,34 @@ def loadPage():
     #selecting  "State Wise" radio button
     radio1 = driver.find_element_by_xpath("//input[@id='optlist_2']")
     radio1.click()
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(WAIT_TIME)
 
+WAIT_TIME = 3
 driver = webdriver.Chrome()
 loadPage()
 
 for i in range(1,38): #TOTAL_NO_OF_STATES = 38
+
+    #selecting the state
+    Select(driver.find_element_by_xpath("//select[@id='ddlitem']")).select_by_index(i)
+    driver.implicitly_wait(WAIT_TIME)
+
+    #clicking search button
+    driver.find_element_by_xpath("//input[@id='search']").click()
+    driver.implicitly_wait(WAIT_TIME)
+
+    #finding the total number of pages to loop
+    total_schools = int(driver.find_element_by_xpath("//span[@id='tot']").text)
+    total_pages = int(total_schools/25)
     
-    state = Select(driver.find_element_by_xpath("//select[@id='ddlitem']"))
-    state.select_by_index(i)
-    driver.implicitly_wait(5)
-
-    district = Select(driver.find_element_by_xpath("//select[@id='DropDownDistrict']"))
-    districtCount = len(district.options)
-    print("District count=",districtCount)
-
-    for j in range(1,districtCount-1):
-        
-        district = Select(driver.find_element_by_xpath("//select[@id='DropDownDistrict']"))
-        district.select_by_index(j)
-        driver.implicitly_wait(5)
-
-        #clicking search button
-        driver.find_element_by_xpath("//input[@id='search']").click()
-        driver.implicitly_wait(5)
-
-        #loop through the pages
-        total_schools = int(driver.find_element_by_xpath("//span[@id='tot']").text)
-        total_pages = int(total_schools/25)
-        print("PAGES=",total_pages)
-
-        for k in range(total_pages):
-            nextButton = driver.find_element_by_xpath("//input[@id='Button1']")
-            driver.execute_script("arguments[0].click();", nextButton)
-        
-        #reload the page to bypass a bug [check github issue for more details]
-        loadPage()
-        state = Select(driver.find_element_by_xpath("//select[@id='ddlitem']"))
-        state.select_by_index(i)
-        driver.implicitly_wait(5)
+    for k in range(total_pages):
+        print("Page ",k+1,"/",total_pages," of ",Select(driver.find_element_by_xpath("//select[@id='ddlitem']")).first_selected_option.text)
+        nextButton = driver.find_element_by_xpath("//input[@id='Button1']")
+        driver.execute_script("arguments[0].click();", nextButton)
+     
+    #reload the page to bypass a bug [check github issue for more details]
+    loadPage()
+    Select(driver.find_element_by_xpath("//select[@id='ddlitem']")).select_by_index(i)
+    driver.implicitly_wait(WAIT_TIME)
 
 driver.close()
