@@ -15,4 +15,5 @@ The `single-page.py` was made to test scraping from an individual page (`sampleP
 1) Download chrome webdriver from http://chromedriver.chromium.org/downloads
 2) Copy it into `/usr/local/bin/chromedriver on macOS`
 
-OR Use `brew cask install chromedriver`
+#### For Mac 
+`brew cask install chromedriver`
